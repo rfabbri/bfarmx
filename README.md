@@ -27,6 +27,24 @@ A definitive solution is still under investigation.
     pbs/separated
     pbs/single
 
+## Tutorial/Examples
+
+A community-written tutorial using these experiments is available at
+
+http://wiki.nosdigitais.teia.org.br/Blender_Farm
+
+A (possibly out-of-sync) copy of that tutorial is available at
+
+    Blender_Farm.wiki
+
+In mediawiki format.
+
+### Updating the tutorial
+
+1) download source from the wiki over Blender_farm.wiki and run a git diff
+2) carefully see if there were changes on the wiki or on the Git. If on the
+wiki, just patch up those changes. If on the Git, just move original git file
+back to the wiki (overwrite it)
 
 ## Authors
 

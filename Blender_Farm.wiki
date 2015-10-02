@@ -1,0 +1,45 @@
+We describe some basic experiments on running Blender on
+a hybrid compute cluster.
+
+== Goal ==
+
+One main goal is to speed up rendering.
+Full HD Videos can take weeks to render
+from a fairly complex scene using the Cycles engine.
+
+=== Test Data / Sample Applications ===
+To feel the need for high-performance numeric crunching, download the a demo
+file from
+
+https://www.blender.org/download/demo-files
+
+The barcelona pavilion scene won't even load on a 1GB NVidia GPU (it says: out of memory)!
+An SD video with 100 frames takes over 3 days on a top-of-the-line Core i7 (as of 2015).
+
+On our compute cluster with Tesla GPUs, each having 4GB RAM, Blender is able to render such videos,
+but is still not fast enough to render the entire video in reasonable time. Therefore, we'd like to use both CPU and GPU, and distribute frames to be rendered across nodes.
+
+We have Xeon Phi's as well, which we'd like to use as CPU-rendering within blender, but with a high number of threads (over 100).
+
+In practice, we'd like to setup a workflow where we render a scene under multiple conditions and parameters, eg to generate ground-truth for big-data apps such as machine learning and computer vision as in 3D reconstrution and Video Understanding.
+
+Another applicatio would be to devise real-time computer vision systems to process the videos, which is effectively inverse computer graphics.
+
+== See Also ==
+* [[Introduction to Parallel Computing]]: a graduate-level course on parallel computing taught at [[IPRJ]]
+
+== Contact ==
+
+Douglas Pio, Hilton Guaraldi and Ricardo Fabbri
+Polytechnic Institute at UERJ - Rio de Janeiro State University
+http://pt.wikipedia.org/wiki/IPRJ
+www.iprj.uerj.br
+labMacambira.sf.net
+
+
+[[Category: Grafico]]
+[[Category: Video]]
+[[Category: Blender]]
+[[Category: Linux]]
+[[Category: IPRJ]]
+[[Category: Lab Macambira]]
