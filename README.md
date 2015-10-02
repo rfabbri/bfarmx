@@ -11,6 +11,8 @@ this, eg, to get blender to render remotely for you even on a single node.
 
 For those who need to access a system through PBS, 
 we wrote simple PBS scripts to spawn the Blender instances and setup netrender.
+These have fragments of shell script so that they can also be used as a basis
+for any other way of bootstrapping the blender farm.
 
 A definitive solution is still under investigation.
 
@@ -21,11 +23,21 @@ A definitive solution is still under investigation.
     core/Client.py
     core/Master.py
 
+    These scripts start the netrender extension
+
 ### Early experiments with PBS to setup the entire farm
 
-    pbs/*
-    pbs/separated
-    pbs/single
+    pbs/farm.pbs             # Starts a Master and a Client on a control node,
+                             # and Slaves on all others
+
+    pbs/*                    # Remaining scripts to bring up blender on each node
+
+    These are shell script fragments (warning: experimental).
+
+### Rudimentary scripts to perform basic tasks
+    misc/ls-blenders         # lists all blenders running on nodes, for debugging
+    misc/startMaster.sh      # crude way of bringing up blender farm 
+                             # on all nodes through shell / ssh
 
 ## Tutorial/Examples
 
