@@ -37,7 +37,7 @@ Another application would be to devise real-time computer vision systems to proc
 
 # Install NVidia CUDA on a linux or [[Mac]] OSX node (follow a post on stackoverflow by Gandalf)
 # If you succeeded, then GPU will showup in preferences:
-## Go to Preferences - System. Compute device must show CUDA (likely OpenCL too). Select that.
+# Go to Preferences - System. Compute device must show CUDA (likely OpenCL too). Select that.
 # On the render context, set Compute Device to GPU.
 
 === Optimizing parameters ===
@@ -55,10 +55,8 @@ Dowload them at:
 == Contact ==
 
 Douglas Pio, Hilton Guaraldi and Ricardo Fabbri
-Polytechnic Institute at UERJ - Rio de Janeiro State University
-http://pt.wikipedia.org/wiki/IPRJ
-www.iprj.uerj.br
-labMacambira.sf.net
+* [[IPRJ|Polytechnic Institute at UERJ - Rio de Janeiro State University]]
+* [[Lab Macambira]]
 
 
 [[Category: Grafico]]
