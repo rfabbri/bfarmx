@@ -7,7 +7,7 @@ One main goal is to speed up rendering.
 Full HD Videos can take weeks to render
 from a fairly complex scene using the Cycles engine.
 
-=== Test Data / Sample Applications ===
+=== Test Data / Applications ===
 To feel the need for high-performance numeric crunching, download the a demo
 file from
 
@@ -23,7 +23,31 @@ We have Xeon Phi's as well, which we'd like to use as CPU-rendering within blend
 
 In practice, we'd like to setup a workflow where we render a scene under multiple conditions and parameters, eg to generate ground-truth for big-data apps such as machine learning and computer vision as in 3D reconstrution and Video Understanding.
 
-Another applicatio would be to devise real-time computer vision systems to process the videos, which is effectively inverse computer graphics.
+Another application would be to devise real-time computer vision systems to process the videos, which is effectively inverse computer graphics.
+
+== Single node CPU parallel rendering ==
+
+# Select the cycles engine 
+# On the performance panel of render context, set the number of threads.
+
+=== Optimizing parameters ===
+==== Choosing the block size ====
+
+== Single node GPU parallel rendering ==
+
+# Install NVidia CUDA on a linux or [[Mac]] OSX node (follow a post on stackoverflow by Gandalf)
+# If you succeeded, then GPU will showup in preferences:
+## Go to Preferences - System. Compute device must show CUDA (likely OpenCL too). Select that.
+# On the render context, set Compute Device to GPU.
+
+=== Optimizing parameters ===
+==== Choosing the block size ====
+
+== Multiple node ==
+We wrote scripts on a software package called '''bfarmx''' to control blender
+using Netrender to distribute frames. These are still in a very early experimental phase.
+Dowload them at:
+ http://github.com/rfabbri/bfarmx
 
 == See Also ==
 * [[Introduction to Parallel Computing]]: a graduate-level course on parallel computing taught at [[IPRJ]]
