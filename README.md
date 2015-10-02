@@ -16,8 +16,12 @@ A definitive solution is still under investigation.
 
 ## Contents
 
+### Generally useful scripts for the main functionality
+
   core/Client.py
   core/Master.py
+
+### Early experiments with PBS to setup the entire farm
 
   pbs/*
   pbs/separated

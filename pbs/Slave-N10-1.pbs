@@ -1,0 +1,20 @@
+#!/bin/sh
+### General Options ###
+#PBS -N Blender-Slave-N10-1
+#PBS -V
+#PBS -r n
+### Resource Handling ###
+#PBS -l nodes=1:ppn=1:blender2
+#PBS -q batch
+#PBS -l walltime=23:00:00
+### Output Stream Options ### 
+
+### Bash script ###
+echo ""
+echo Blender-Escravo 1 em `hostname`
+echo ""
+
+myblender="blender -b -noaudio"
+$myblender -P Slave.py
+
+exit 0
