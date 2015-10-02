@@ -1,0 +1,5 @@
+To Do
+- Make scripts set the engine to Cycles in the jobs panel of netrender
+- Make scripts spawn additional Slave for GPU render for nodes that need them
+- Better understand the performance render parameters and optimizations and
+  experiment with them
