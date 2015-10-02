@@ -33,11 +33,15 @@ A definitive solution is still under investigation.
 These early experiments were put together in parts by:
 
 Douglas Pio, Hilton Guaraldi and Ricardo Fabbri
+
 Polytechnic Institute at UERJ - Rio de Janeiro State University
+
 http://pt.wikipedia.org/wiki/IPRJ
+
 www.iprj.uerj.br
 
 ## License
 
 GPL - see COPYING for details. We may provide a different license upon request.
+
 Copyright (C) 2013-2015 Douglas Pio, Hilton Guaraldi and Ricardo Fabbri
