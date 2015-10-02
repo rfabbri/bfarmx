@@ -43,11 +43,19 @@ Another application would be to devise real-time computer vision systems to proc
 === Optimizing parameters ===
 ==== Choosing the block size ====
 
-== Multiple node ==
+== Multiple nodes ==
 We wrote scripts on a software package called '''bfarmx''' to control blender
 using Netrender to distribute frames. These are still in a very early experimental phase.
 Dowload them at:
  http://github.com/rfabbri/bfarmx
+
+=== Installing Blender on a Cluster ===
+
+The easiest way was to download the self-contained binary tarball from the
+downloads section of the official website (it runs on most distros), then install that on the cluster,
+either in the user NFS home folder (install once for the entire cluster),
+or system-wide at each node.
+
 
 == See Also ==
 * [[Introduction to Parallel Computing]]: a graduate-level course on parallel computing taught at [[IPRJ]]
