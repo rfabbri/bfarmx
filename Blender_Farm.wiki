@@ -44,12 +44,26 @@ Another application would be to devise real-time computer vision systems to proc
 ==== Choosing the block size ====
 
 == Multiple nodes ==
+=== Manual GUI approach for multiple nodes ===
+
+====Netrender====
+The main instructions are: [http://wiki.blender.org/index.php/Doc%3A2.6/Manual/Render/Performance/Netrender]
+* Activate Preferences - addons - Render - Network Render
+* On the Render Context, you'll have options such as Client/Master/Slave
+* Follow the instructions in the aforementioned link
+  
+=== Automation for multiple nodes ===
 We wrote scripts on a software package called '''bfarmx''' to control blender
 using Netrender to distribute frames. These are still in a very early experimental phase.
 Dowload them at:
  http://github.com/rfabbri/bfarmx
 
-=== Installing Blender on a Cluster ===
+=== Other Approaches ===
+
+* Flamenco: Very large scale job render management [https://gooseberry.blender.org/announcing-flamenco-2-0alpha-release]
+** A much larger system, but the more primitive netrender techniques above are still useful for learning purposes and for small experiments due to their simplicity.
+
+=== Installing Blender on each node of a Cluster ===
 
 The easiest way was to download the self-contained binary tarball from the
 downloads section of the official website (it runs on most distros), then install that on the cluster,
