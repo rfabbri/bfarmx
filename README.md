@@ -18,14 +18,14 @@ A definitive solution is still under investigation.
 
 ### Generally useful scripts for the main functionality
 
-  core/Client.py
-  core/Master.py
+    core/Client.py
+    core/Master.py
 
 ### Early experiments with PBS to setup the entire farm
 
-  pbs/*
-  pbs/separated
-  pbs/single
+    pbs/*
+    pbs/separated
+    pbs/single
 
 
 ## Authors
