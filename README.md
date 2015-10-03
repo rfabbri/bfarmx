@@ -20,8 +20,12 @@ A definitive solution is still under investigation.
 
 ### Generally useful scripts for the main functionality
 
-    core/Client.py
-    core/Master.py
+    core/Client.py           # For use in the render farm
+    core/Master.py           # For use in the render farm
+    core/Slave.py            # For use in the render farm
+
+    misc/bljob               # starts a single CLI blender job, 
+                             # useful for using blender with nohup etc
 
     These scripts start the netrender extension
 
