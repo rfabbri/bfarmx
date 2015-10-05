@@ -9,10 +9,12 @@ case $1 in
       echo 'Usage: bljob [blender args | -h | --help]' 1>&2;
 esac
 
-myblender="/Users/rfabbri/src/blender-2.75-9355446-OSX-10.6-x86_64/blender.app/Contents/MacOS/blender -b -noaudio"
+#myblender="`which blender` -b -noaudio"
+myblender="$HOME/blender-2.75a-linux-glibc211-x86_64/blender -b -noaudio"
+##myblender="/Users/rfabbri/src/blender-2.75-9355446-OSX-10.6-x86_64/blender.app/Contents/MacOS/blender -b -noaudio"
 #$myblender prj.blend -o /home/rfabbri/ -P  -F PNG -x 1 bljob.py&
 
 # Customize a script 
 
 # Write customized script with PID to temp
-$myblender ~/tmp/pavillon_barcelone_v1.2-cam-007.blend -P bljob.py  &
+$myblender ~/tmp/pavillon_barcelone_v1.2-cam-007.blend -P bljob.py 

@@ -10,8 +10,8 @@ case $1 in
 esac
 
 DEVICE=CPU
-FRAME_START=1
-FRAME_END=10
+FRAME_START=51
+FRAME_END=60
 
 # input blender file must be placed in 
 bfile=~/tmp/pavillon_barcelone_v1.2-cam-007.blend
@@ -39,7 +39,9 @@ fi
 
 pwd > $exp_dir/cwd
 
-myblender="/Users/rfabbri/src/blender-2.75-9355446-OSX-10.6-x86_64/blender.app/Contents/MacOS/blender -b -noaudio"
+#myblender="`which blender` -b -noaudio"
+myblender="$HOME/blender-2.75a-linux-glibc211-x86_64/blender -b -noaudio"
+#myblender="/Users/rfabbri/src/blender-2.75-9355446-OSX-10.6-x86_64/blender.app/Contents/MacOS/blender -b -noaudio"
 #$myblender prj.blend -o /home/rfabbri/ -P  -F PNG -x 1 bljob.py&
 
 # Customize a script 
