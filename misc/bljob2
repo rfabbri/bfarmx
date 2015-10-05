@@ -10,13 +10,13 @@ case $1 in
 esac
 
 DEVICE=CPU
-FRAME_START=2
-FRAME_END=3
+FRAME_START=1
+FRAME_END=10
 
 # input blender file must be placed in 
 bfile=~/tmp/pavillon_barcelone_v1.2-cam-007.blend
 #exp_dir="`dirname $bfile`/exp-`basename $bfile`"
-exp_dir="${bfile}-pid_$$.exp"
+exp_dir="${bfile}-device_$DEVICE-frames_${FRAME_START}_$FRAME_END-pid_$$.exp"
 
 if [ ! -d $exp_dir ]; then
   echo creating directory $exp_dir
