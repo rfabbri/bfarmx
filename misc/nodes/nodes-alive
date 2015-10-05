@@ -1,5 +1,5 @@
 #!/bin/sh
-for i in `cat names`; do
+for i in `cat all-names`; do
 	echo =============
 	echo pinging node $i
 	ping -c 2 $i
