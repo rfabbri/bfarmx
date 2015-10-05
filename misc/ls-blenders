@@ -3,11 +3,18 @@
 #
 # not up-to-date
 #
-echo blenders em n0:
-ssh n0 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
-echo blenders em n1:
-ssh n1 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
-echo blenders em n10:
-ssh n10 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
-echo blenders em n11:
-ssh n11 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
+#  echo blenders em n0:
+#  ssh n0 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
+#  echo blenders em n1:
+#  ssh n1 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
+#  echo blenders em n10:
+#  ssh n10 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
+#  echo blenders em n11:
+#  ssh n11 ps -aux | grep $USER | grep blender | grep -v grep | grep -v ssh
+
+for i in `cat nodes/names`; do
+	echo =======================================================	
+	echo blenders em $i:
+        ssh $i ps -aux | grep $USER | egrep --color '(blender|bljob)' | grep -v grep | grep -v time | grep -v ls-blenders | grep -v ssh
+	echo
+done
