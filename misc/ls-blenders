@@ -15,7 +15,7 @@
 for i in `cat nodes/names`; do
 	echo =======================================================	
 	echo blenders em $i:
-        ssh $i ps -aux | grep $USER | egrep '(blender|bljob)' | grep -v grep | grep -v time | grep -v ls-blenders | grep -v ssh | cut -f 2- -d ' ' | egrep --color '^ *[0-9]+'
+        ssh $i ps -A | egrep '(blender|bljob)' | grep -v grep | grep -v time | grep -v ls-blenders | grep -v ssh #| cut -f 2- -d ' ' | egrep --color '^ *[0-9]+'
 # 	ssh $i cat /proc/cpuinfo |grep -i mips
 # 	echo number of threads: `ssh $i cat /proc/cpuinfo |grep -i mips |wc -l`
 # 	ssh $i cat /proc/cpuinfo |grep -i --color model\ name
