@@ -16,7 +16,7 @@ FRAME_END=3
 # input blender file must be placed in 
 bfile=~/tmp/pavillon_barcelone_v1.2-cam-007.blend
 #exp_dir="`dirname $bfile`/exp-`basename $bfile`"
-exp_dir="${bfile}.exp"
+exp_dir="${bfile}-pid_$$.exp"
 
 if [ ! -d $exp_dir ]; then
   echo creating directory $exp_dir
