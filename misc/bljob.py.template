@@ -8,7 +8,7 @@ bpy.context.scene.cycles.device = '@DEVICE@'     # make it ‘CPU’ for cpu and
 bpy.context.scene.render.threads_mode = "AUTO"   # on the cluster, auto-detect
 
 # Dataset-specific:
-bpy.context.scene.render.resolution_percentage = 5 
+bpy.context.scene.render.resolution_percentage = 100
 bpy.context.scene.frame_start=@FRAME_START@
 bpy.context.scene.frame_end=@FRAME_END@
 bpy.context.scene.render.filepath = "//sunset-" + str(bpy.context.scene.render.resolution_percentage) + "%-"

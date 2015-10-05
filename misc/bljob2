@@ -6,12 +6,38 @@ esac
 
 case $1 in
     -h | --help | -? )
-      echo 'Usage: bljob [blender args | -h | --help]' 1>&2;
+      echo 'Usage: bljob [blender args | -h | --help]' 1>&2; exit 1;
 esac
 
 DEVICE=CPU
 FRAME_START=2
 FRAME_END=3
+
+# input blender file must be placed in 
+bfile=~/tmp/pavillon_barcelone_v1.2-cam-007.blend
+#exp_dir="`dirname $bfile`/exp-`basename $bfile`"
+exp_dir="${bfile}.exp"
+
+if [ ! -d $exp_dir ]; then
+  echo creating directory $exp_dir
+  if ! mkdir $exp_dir; then
+    echo bljob2: could not create directory $exp_dir.
+    exit 1
+  fi
+else
+  echo "bljob2: directory $exp_dir already exists; remove it first." 1>&2; exit 1;
+fi
+
+set -x
+mynice='nice -n 2'
+mytime=`which time`
+
+if test -z "$mytime"; then
+  echo 'bljob2: time not found.'
+  exit 1
+fi
+
+pwd > $exp_dir/cwd
 
 myblender="/Users/rfabbri/src/blender-2.75-9355446-OSX-10.6-x86_64/blender.app/Contents/MacOS/blender -b -noaudio"
 #$myblender prj.blend -o /home/rfabbri/ -P  -F PNG -x 1 bljob.py&
@@ -19,7 +45,7 @@ myblender="/Users/rfabbri/src/blender-2.75-9355446-OSX-10.6-x86_64/blender.app/C
 # Customize a script 
 sed "s/@DEVICE@/$DEVICE/g
 s/@FRAME_START@/$FRAME_START/g
-s/@FRAME_END@/$FRAME_END/g" bljob.py.template > /tmp/bljob-$$.py
+s/@FRAME_END@/$FRAME_END/g" bljob.py.template > $exp_dir/bljob-$$.py
 
 # Write customized script with PID to temp
-$myblender ~/tmp/pavillon_barcelone_v1.2-cam-007.blend -P bljob-$$.py  &
+nohup $mytime $myblender $bfile -P $exp_dir/bljob-$$.py $* | tee $exp_dir/output
